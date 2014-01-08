@@ -1,1 +1,6 @@
 build/
+libactors.config
+libactors.creator
+libactors.files
+libactors.includes
+libactors.creator.user
