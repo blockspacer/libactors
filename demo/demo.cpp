@@ -1,5 +1,4 @@
 
-#include <thread>
 #include <libactors/actor.h>
 #include <libactors/dispatcher.h>
 
@@ -10,10 +9,13 @@ int main() {
     Dispatcher dispatcher(threadsCount);
     dispatcher.addActor(std::make_shared<Actor>());
 
-    std::thread dispatcherThread(dispatcher);
-    std::cout << "dispatcher started" << std::endl;
+    std::cerr << "dispatcher start" << std::endl;
+    dispatcher.start();
 
-    dispatcherThread.join();
-    std::cout << "dispatcher stopped" << std::endl;
+    std::this_thread::sleep_for(std::chrono::seconds(1));
+
+    dispatcher.stop();
+    std::cerr << "dispatcher stopped" << std::endl;
+
     return 0;
 }

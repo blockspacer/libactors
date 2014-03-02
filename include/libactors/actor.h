@@ -10,7 +10,7 @@ namespace libactors {
 class ActionTask: public threadpool::ITask {
 public:
     virtual void run() {
-        std::cout << "hello from action" << std::endl;
+        std::cerr << "hello from action" << std::endl;
     }
 };
 
